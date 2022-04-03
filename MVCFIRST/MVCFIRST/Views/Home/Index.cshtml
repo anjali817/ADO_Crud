@@ -1,0 +1,31 @@
+﻿@model List<MVCFIRST.Models.EMPMpdel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>EMPOLYEE LIST</h1>
+<table class="table table-bordered table-responsive table-hover">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>City</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Mobile</td>
+            <td>@item.City</td>
+            <td><a href="../Home/Edit?Id=@item.Id" class="btn btn-success btn-sm">Eidt</a></td>
+            <td><a href="../Home/Delete?Id=@item.Id" class="btn btn-danger btn-sm">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="~/Home/Create"  class="btn btn-primary">Create</a>
